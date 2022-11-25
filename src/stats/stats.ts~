@@ -1,0 +1,80 @@
+import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, MarkdownPostProcessorContext, parseYaml  } from 'obsidian';
+
+
+const allowValues = ["data", "layout", "config", "hp", "hpMax", "lvl", "xp", "xpMax", "hpTime","defence","initiative","speed"];
+
+const genhtml = (json: any) => `
+<div class="stats hp">
+     HP: <div class="hp-progress">
+      <div class="hp-value">${json.hp}/${json.hpMax}</div>
+       <progress id="hp" value="${json.hp}" max="${json.hpMax+json.hpTime}"> ${json.hpMax/json.hp}% </progress>
+    </div>
+  </div>
+</div>
+
+<section class="lvl_wrap">
+  <div class="lvl-lable">LVL: <div class="lvl-lable">${json.lvl}</div></div>
+
+  <div class="stats hp">
+    XP: <div class="hp-progress">
+      <progress id="xp" value="${json.xp}" max="${json.xpMax}"> ${json.xpMax/json.xp}% </progress></div> </div>
+</div>
+</section>
+
+<div class="defence">
+  <div class="defence-val">
+    ${json.defence}
+  </div>
+</div>
+
+<div class="initiative">
+  <div class="initiative-val">
+    ${json.initiative}
+  </div>
+</div>
+
+<div class="speed">
+  <div class="speed-val">
+    ${json.speed}
+  </div>
+</div>
+
+
+`;
+
+export const validate = (json: any, el: HTMLElement) => {
+    if(!json){
+        throw "There should be a valid JSON in this block."
+    }
+
+    Object.keys(json).forEach(key=>{
+        if(!allowValues.contains(key)){
+            throw "The only valid keys are data, layout and config."
+        }
+    })
+}
+
+export const render = (json: any, el: HTMLElement) => {
+    let destination = document.createElement('div');
+    destination.innerHTML = destination.innerHTML + genhtml(json);
+
+    if(el.firstElementChild!=null){
+        el.replaceChild(destination, el.firstElementChild);
+    } else {
+        el.appendChild(destination);
+    }
+}
+
+
+export const preprocessor = (content: string, el: HTMLElement, ctx: MarkdownPostProcessorContext)=>{
+    let json;
+    try{
+        json = parseYaml(content);
+        validate(json, el)
+        render(json, el)
+    } catch (error) {
+        let errorDiv = document.createElement('div');
+        errorDiv.textContent = "Couldn't render plot:" + error;
+        el.appendChild(errorDiv);
+    }
+}

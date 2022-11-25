@@ -1,0 +1,47 @@
+import { MarkdownView, MarkdownPostProcessorContext, parseYaml  } from 'obsidian';
+
+import * from './magic'
+import * from './skills'
+import * from './stats'
+
+
+export const magicProcessor = (content: string, el: HTMLElement, ctx: MarkdownPostProcessorContext)=>{
+    let json;
+    try{
+        json = parseYaml(content);
+        magic(json, el)
+        render(json, el)
+    } catch (error) {
+        let errorDiv = document.createElement('div');
+        errorDiv.textContent = "Couldn't render plot:" + error;
+        el.appendChild(errorDiv);
+    }
+}
+
+
+
+export const statsProcessor = (content: string, el: HTMLElement, ctx: MarkdownPostProcessorContext)=>{
+    let json;
+    try{
+        json = parseYaml(content);
+        validate(json, el)
+        render(json, el)
+    } catch (error) {
+        let errorDiv = document.createElement('div');
+        errorDiv.textContent = "Couldn't render plot:" + error;
+        el.appendChild(errorDiv);
+    }
+}
+
+export const skillsProcessor = (content: string, el: HTMLElement, ctx: MarkdownPostProcessorContext)=>{
+    let json;
+    try{
+        json = parseYaml(content);
+        validate(json, el)
+        render(json, el)
+    } catch (error) {
+        let errorDiv = document.createElement('div');
+        errorDiv.textContent = "Couldn't render plot:" + error;
+        el.appendChild(errorDiv);
+    }
+}
