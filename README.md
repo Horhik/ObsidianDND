@@ -1,73 +1,61 @@
-# Obsidian Sample Plugin
+# ObsidianDND
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+based on obsidian sample plugin
 
-This project uses Typescript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
+## Content
 
-**Note:** The Obsidian API is still in early alpha and is subject to change at any time!
+This plugin contains set of modules for creating character list in obsidian
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Changes the default font color to red using `styles.css`.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
+## Modules
 
-## First time developing plugins?
+Use 
+```dnd-stats
+hp: 30        # ЗДОРОВЬЕ
+hpMax: 60     # МАКСИМАЛЬНОЕ ЗДОРОВЬЕ
+lvl: 3        # УРОВЕНЬ
+xp: 1200      # ОПЫТ
+xpMax: 1500   # МАКС ОПЫТ
+hpTime: 13     # ВРЕМЕННЫЕ ХИТЫk
+defence: 14   # КД
+initiative: 5 # ИНИЦИАТИВА
+speed: 30     # СКОРОСТЬ
+inspiration: 0# ВДОХНОВЕНИЕ
+tiredness: 0  # ИСТОЩЕНИЕ
+```
+For displaying your stats 
 
-Quick starting guide for new plugin devs:
+![image](https://user-images.githubusercontent.com/46262811/204142751-c9bb87f3-8d07-4c0b-a4c2-83ba2127619d.png)
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+Use 
 
-## Releasing new releases
-
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
-
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
-
-## Adding your plugin to the community plugin list
-
-- Check https://github.com/obsidianmd/obsidian-releases/blob/master/plugin-review.md
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
-
-## How to use
-
-- Clone this repo.
-- `npm i` or `yarn` to install dependencies
-- `npm run dev` to start compilation in watch mode.
-
-## Manually installing the plugin
-
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
+```dnd-skills
+prof_bonus: 2         # БОНУС МАСТЕРСТВА 💋
+strength: [7,0]       # СИЛА 💪
+dexterity: [12,0]     # ЛОВКОСТЬ 🧘 
+constitution: [13,0]  # ТЕЛОСЛОЖЕНИЕ 💝
+intelligence: [15,0]  # ИНТЕЛЛЕКТ 🧠
+wisdom: [18,1]        # МУДРОСТЬ 🤔
+charisma: [20,1]      # ХАРИЗМА 🗣️
+acrobatics: 0       # АКРОБАТИКА 
+animal_handling: 0   # ПРИРУЧЕНИЕ ЖИВОТНЫХ
+arcana: 0            # МАГИЯ
+athletics: 0         # АТЛЕТИКА
+deception: 0         # ОБМАН
+history: 1           # ИСТОРИЯ
+insight: 0           # ПРОНИЦАТЕЛЬНОСТЬ
+intimidation: 0      # ЗАПУГИВАНИЕ
+investigation: 0     # РАССЛЕДОВАНИЕ
+medicine: 1          # МЕДИЦИНА
+nature: 0            # ПРИРОДА
+perception: 0        # ВОСПРИЯТИЕ/ОЩУЩЩЕНИЕ 
+performance: 0       # ВЫСТУПЛЕНИЕ
+persuasion: 0        # УБЕЖДЕНИЕ
+religion: 1          # РЕЛИГИЯ
+sleight_of_hand: 0   # ЛОВКОСТЬ РУК
 
 
-## API Documentation
+```
 
-See https://github.com/obsidianmd/obsidian-api
+For displaying your skills e.t.c.
+
+![image](https://user-images.githubusercontent.com/46262811/204142799-a3ea0ef7-e2ae-4d07-9bf9-03b69a2b8762.png)
