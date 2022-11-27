@@ -3,9 +3,7 @@ import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Set
 import {html} from './html';
 
 
-const allowValues = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "prof-bonus", "acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight_of_Hand", "stealth", "survival"]
-
-
+const allowValues = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "prof_bonus", "acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight_of_hand", "stealth", "survival"]
 
 const genhtml = (json: any) => html(json);
 

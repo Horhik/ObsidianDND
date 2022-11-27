@@ -165,5 +165,78 @@ align-content: center;
 
 
 
+
+.skills-item {
+    display: flex;
+    font-family: var(--font);
+    margin-bottom: 20px;
+}
+
+.skills-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skills-item::before {
+    display: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-item-label {
+    font-size: 1.8em;
+    background-color: var(--tag-background);
+    padding: 5px;
+    border-radius: 10px;
+    width: 7em;
+}
+
+.skills-item-value {
+
+    font-size: 1.7em;
+    font-weight: bold;
+    z-index: 3;
+    background-color: var(--accent);
+    float: left;
+    transform: scale(1.4);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 10px;
+
+}
+
+
+.skills-item-label {
+    font-size: 1.8em;
+    background-color: var(--accent2);
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 7em;
+    padding-left: 0.5em;
+    text-align: center;
+}
+/*
+.skills-item:nth-child(2n+0) {
+    margin-left: 5em;
+}
+*/
+
+.skill-item-mark {
+    font-size: 2em;
+    font-weight: bold;
+    margin-left: 25px;
+    border-radius: 20px;
+    margin-top: 6px;
+}
 </style>
 `;
