@@ -1,7 +1,14 @@
 import { App, Editor, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting, MarkdownPostProcessorContext, parseYaml  } from 'obsidian';
 
+import {html} from './html';
 
-const allowValues = ["data", "layout", "config"];
+
+const allowValues = ["strength", "dexterity", "constitution", "intelligence", "wisdom", "charisma", "prof-bonus", "acrobatics", "animal_handling", "arcana", "athletics", "deception", "history", "insight", "intimidation", "investigation", "medicine", "nature", "perception", "performance", "persuasion", "religion", "sleight_of_Hand", "stealth", "survival"]
+
+
+
+const genhtml = (json: any) => html(json);
+
 
 export const validate = (json: any, el: HTMLElement) => {
     if(!json){
@@ -16,12 +23,8 @@ export const validate = (json: any, el: HTMLElement) => {
 }
 
 export const render = (json: any, el: HTMLElement) => {
-    renderPlotly(el, json.data, json.layout, json.config)
-}
-
-export const renderPlotly = (el: HTMLElement, data: Object[], layout: Object, config: Object) => {
     let destination = document.createElement('div');
-    destination.innerHTML = destination.innerHTML + "<ul><li>meow</li></ul>";
+    destination.innerHTML = destination.innerHTML + genhtml(json);
 
     if(el.firstElementChild!=null){
         el.replaceChild(destination, el.firstElementChild);
