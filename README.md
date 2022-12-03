@@ -4,11 +4,13 @@ based on obsidian sample plugin
 
 ## Content
 
-This plugin contains set of modules for creating character list in obsidian
+This plugin contains set of modules for creating character list in obsidian.
+Currently, it is not translated. Only Russian.
 
 ## Modules
 
 Use 
+~~~
 ```dnd-stats
 hp: 30        # ЗДОРОВЬЕ
 hpMax: 60     # МАКСИМАЛЬНОЕ ЗДОРОВЬЕ
@@ -22,12 +24,13 @@ speed: 30     # СКОРОСТЬ
 inspiration: 0# ВДОХНОВЕНИЕ
 tiredness: 0  # ИСТОЩЕНИЕ
 ```
+~~~
 For displaying your stats 
 
 ![image](https://user-images.githubusercontent.com/46262811/204142751-c9bb87f3-8d07-4c0b-a4c2-83ba2127619d.png)
 
 Use 
-
+~~~
 ```dnd-skills
 prof_bonus: 2         # БОНУС МАСТЕРСТВА 💋
 strength: [7,0]       # СИЛА 💪
@@ -52,9 +55,8 @@ performance: 0       # ВЫСТУПЛЕНИЕ
 persuasion: 0        # УБЕЖДЕНИЕ
 religion: 1          # РЕЛИГИЯ
 sleight_of_hand: 0   # ЛОВКОСТЬ РУК
-
-
 ```
+~~~
 
 For displaying your skills e.t.c.
 
