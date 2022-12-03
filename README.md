@@ -2,14 +2,14 @@
 
 based on obsidian sample plugin
 
-## Content
+
 
 This plugin contains set of modules for creating character list in obsidian.
 Currently, it is not translated. Only Russian.
 
 ## Modules
 
-Use 
+**Use:**
 ~~~
 ```dnd-stats
 hp: 30        # ЗДОРОВЬЕ
@@ -29,7 +29,7 @@ For displaying your stats
 
 ![image](https://user-images.githubusercontent.com/46262811/204142751-c9bb87f3-8d07-4c0b-a4c2-83ba2127619d.png)
 
-Use 
+**Use**
 ~~~
 ```dnd-skills
 prof_bonus: 2         # БОНУС МАСТЕРСТВА 💋
