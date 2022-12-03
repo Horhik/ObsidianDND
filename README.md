@@ -61,3 +61,7 @@ sleight_of_hand: 0   # ЛОВКОСТЬ РУК
 For displaying your skills e.t.c.
 
 ![image](https://user-images.githubusercontent.com/46262811/204142799-a3ea0ef7-e2ae-4d07-9bf9-03b69a2b8762.png)
+
+## Bugs
+Due to my lazyness, styles abow currently works only with [Obsidian ITS theme](https://github.com/SlRvb/Obsidian--ITS-Theme)
+(I'll fix this soon)
